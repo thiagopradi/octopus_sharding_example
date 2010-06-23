@@ -8,7 +8,7 @@ gem 'rails', '3.0.0.beta4'
 gem "warden"
 gem "devise", "1.1.rc1"
 gem "mysql"
-gem 'ar-octopus'
+gem 'ar-octopus', '0.0.6', :require => "octopus"
 
 # Use unicorn as the web server
 # gem 'unicorn'

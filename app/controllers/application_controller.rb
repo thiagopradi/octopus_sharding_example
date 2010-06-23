@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
   def select_shard()
     if user_signed_in?
-      yield
+       using(current_user.country.to_sym) { yield }
     else
-      using(current_user.country.to_sym) { yield }
+      yield     
     end
   end
 end

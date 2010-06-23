@@ -1,0 +1,8 @@
+<h1> Welcome to Octopus Sharding Example! </h1>
+<p> This application will send all writes/reads of user model to master, and then the shard 
+    will be selected based on current_user.country</p>
+
+<% unless user_signed_in? -%>
+  <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
+  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
+<% end -%>
