@@ -5,10 +5,10 @@ gem 'rails', '3.0.0.beta4'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "warden"
-gem "devise", "1.1.rc1"
+gem "warden", '0.10.7'
+gem "devise", '1.1.rc2'
 gem "mysql"
-gem 'ar-octopus', '0.0.6', :require => "octopus"
+gem 'ar-octopus', '0.0.8', :require => "octopus"
 
 # Use unicorn as the web server
 # gem 'unicorn'

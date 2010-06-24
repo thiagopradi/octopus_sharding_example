@@ -6,3 +6,8 @@
   <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
   <p><%= link_to 'Sign in as User', new_user_session_path %></p>
 <% end -%>
+
+<% if user_signed_in? -%>
+  <p><%= link_to 'Items', items_path() %></p>
+<% end -%>
+
