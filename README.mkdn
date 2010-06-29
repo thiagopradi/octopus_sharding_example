@@ -1,0 +1,75 @@
+<h1>Octopus Sharding Example </h1>
+
+<p>This is a sample rails application using sharding with Octopus. This application have the User information on master database, and all informations after login are stored in the shard, based on `country` attribute of the current_user. Available shards are: brazil, mexico and canada.</p>
+
+<h2> How-to </h2>
+<p>Octopus is simple to use, just follow the steps:</p>
+- Add the gem to your Gemfile:
+
+<pre>gem 'ar-octopus', '0.0.12', :require => "octopus"</pre>
+
+- Create a shards.yml file inside config directory, that looks like this:
+
+<pre>
+development:
+  shards:
+    canada:
+      host: localhost
+      adapter: mysql
+      database: canada_shard
+    brazil:
+      host: localhost
+      adapter: mysql
+      database: brazil_shard
+    mexico:
+      host: localhost
+      adapter: mysql
+      database: mexico_shard
+</pre>
+
+<p>After this, you need to select what shard to use. This could be done with around_filter in controller, or setting the shard manually. This code in application_controller.rb that selects the shard: </p>
+
+<pre>
+class ApplicationController < ActionController::Base
+  around_filter :select_shard
+
+
+  def select_shard()
+    if user_signed_in?
+      using(current_user.country.to_sym) { yield }
+    else
+      yield     
+    end
+  end
+end
+</pre>
+
+<p> If the user isn't logged in, the shard will be the master. after this, it will pick the country attribute, passes to Octopus, and all queries will be sent to the selected shard. If you want to specify manually what shard to use, this is the syntax: </p>
+
+<pre> User.using(:brazil).all </pre>
+
+<h3>Important!</h3>
+<p>Each ActiveRecord object knows where is the source shard. if you want to move objects between shards, you need to specify what shard to sent, like this: </p>
+
+<pre> 
+# This will save the user in the brazil shard
+@user = User.using(:brazil).first
+@user.name = "New Name"
+@user.save()
+
+# This will move the data to another shard:
+new_user = User.new
+new_user.attributes = @user.attributes
+new_user.save()
+</pre>
+
+<p>More info could be found at <a href="http://wiki.github.com/tchandy/octopus/">Octopus Wiki</a> </p>
+
+<h2>Thanks</h2>
+
+This project is sponsored by the <a href="http://www.rubysoc.org">Ruby Summer of Code</a>,
+and my mentors <a href="http://github.com/mperham">Mike Perham</a> and <a href="http://github.com/amitagarwal">Amit Agarwal</a>.
+
+<h2>Copyright</h2>
+
+Copyright (c) 2010 Thiago Pradi, released under the MIT license.
