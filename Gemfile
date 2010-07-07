@@ -8,7 +8,7 @@ gem 'rails', '3.0.0.beta4'
 gem "warden", '0.10.7'
 gem "devise", '1.1.rc2'
 gem "mysql"
-gem 'ar-octopus', '0.0.12', :require => "octopus"
+gem 'ar-octopus', '0.0.19', :require => "octopus"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -30,3 +30,12 @@ gem 'ar-octopus', '0.0.12', :require => "octopus"
 # group :test do
 #   gem 'webrat'
 # end
+group :test do
+  gem "rspec-rails", ">= 2.0.0.beta"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'spork'
+  gem 'launchy'
+end
