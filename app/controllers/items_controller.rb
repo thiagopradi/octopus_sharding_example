@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /items
   # GET /items.xml
   def index
-    @items = Item.all
+    @items = Item.using(:brazil).all
 
     respond_to do |format|
       format.html # index.html.erb

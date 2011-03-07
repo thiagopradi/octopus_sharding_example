@@ -1,14 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "warden", '0.10.7'
-gem "devise", '1.1.rc2'
+gem "warden", '1.0.3'
+gem "devise", '1.1.5'
 gem "mysql", '2.8.1'
-gem 'ar-octopus', :git => "git://github.com/tchandy/octopus.git", :require => "octopus"
+gem 'ar-octopus', :require => "octopus"
+# gem 'ar-octopus', :git => "git://github.com/tchandy/octopus.git", :require => "octopus"
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -4,11 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
 
-  def select_shard()
+  def select_shard(&block)
     if user_signed_in?
-      using(current_user.country.to_sym) { yield }
-    else
-      yield     
-    end
+      Octopus.using(current_user.country, &block)
+      # Octopus.using(current_user.country.to_sym){ yield }
+     else
+       yield     
+     end
+  end
+  
+  def after_sign_in_path_for(resource)
+    resource.is_a?(User) ? items_path : super  
   end
 end
