@@ -1,5 +1,5 @@
 octopus:
-  enviroments:
+  environments:
     - development
     - production
   development:
@@ -8,14 +8,11 @@ octopus:
         host: localhost
         adapter: mysql
         database: canada_shard
-        password: 123455
       brazil:
         host: localhost
         adapter: mysql
         database: brazil_shard
-        password: 123455
       mexico:
         host: localhost
         adapter: mysql
         database: mexico_shard
-        password: 123455

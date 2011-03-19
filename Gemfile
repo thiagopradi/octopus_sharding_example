@@ -9,7 +9,6 @@ gem "warden", '1.0.3'
 gem "devise", '1.1.5'
 gem "mysql", '2.8.1'
 gem 'ar-octopus', :require => "octopus"
-# gem 'ar-octopus', :git => "git://github.com/tchandy/octopus.git", :require => "octopus"
 
 # Use unicorn as the web server
 # gem 'unicorn'

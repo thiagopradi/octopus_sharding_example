@@ -6,11 +6,10 @@ class ApplicationController < ActionController::Base
 
   def select_shard(&block)
     if user_signed_in?
-      Octopus.using(current_user.country, &block)
-      # Octopus.using(current_user.country.to_sym){ yield }
-     else
-       yield     
-     end
+      Octopus.using(current_user.country.to_sym, &block)
+    else
+      yield     
+    end
   end
   
   def after_sign_in_path_for(resource)
