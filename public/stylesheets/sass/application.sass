@@ -14,6 +14,15 @@ a
 	outline:none
 	&:hover
 		text-decoration: underline
+		
+		
+label
+	display: block
+	margin-top: 10px
+
+p
+	.inline
+		display: inline
 
 .page
 	margin: 0 auto
@@ -38,6 +47,42 @@ a
 	background: #E7D883
 	color: #625508
 	
+.field_with_errors
+	padding: 2px
+	background-color: red
+	display: table
+	
+	label
+		color: white
+		padding: 0 2px
+
+#error_explanation
+	width: 450px
+	border: 2px solid red
+	padding: 7px
+	padding-bottom: 0
+	margin-bottom: 20px
+	background-color: #f0f0f0
+	
+	ul
+		padding: 7px 5px 7px 20px
+		
+		li
+			margin: 5px 0
+
+#error_explanation h2
+	text-align: left
+	font-weight: bold
+	padding: 5px 5px 5px 15px
+	font-size: 12px
+	margin: -7px
+	margin-bottom: 0px
+	background-color: #c00
+	color: #fff
+
+#error_explanation ul li
+	font-size: 12px
+	list-style: square
 
 #header
 	background: url('/images/layout/bgcontent.jpg') no-repeat
