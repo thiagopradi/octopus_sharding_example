@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.xml
   def index
+
     @items = Item.using(current_user.country.to_sym).all
 
     respond_to do |format|

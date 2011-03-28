@@ -1,0 +1,36 @@
+!!!
+%html
+	%head
+		%title Sharding Example
+		= stylesheet_link_tag :all
+		= javascript_include_tag :defaults
+		= csrf_meta_tag
+	%body
+		#header.page
+			#logo= link_to(image_tag('/images/logo.png'), '/')
+		
+			%ul#nav_user.inline
+				- if user_signed_in?
+					%li= link_to 'Logout', destroy_user_session_path
+				- else
+					%li= link_to 'Log in', new_user_session_path
+					%li= link_to 'Sign up', new_user_registration_path
+			
+			#menu	
+				%ul.inline
+					%li= link_to 'Home', '/'
+					- if current_user
+						%li= link_to 'Items', items_path
+		#content
+			#main.page
+				- flash.each do |name, msg|
+					%p= content_tag :div, msg, :class => name
+				
+				= yield
+		
+		#footer.page
+			%p= link_to 'https://github.com/tchandy/octopus', 'https://github.com/tchandy/octopus'
+			%p= link_to 'https://github.com/tchandy/octopus/wiki', 'https://github.com/tchandy/octopus/wiki'
+			
+			#footlogo
+				#logo= link_to(image_tag('/images/footlogo.png'), '/')

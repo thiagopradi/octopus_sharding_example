@@ -1,0 +1,126 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+	margin: 0
+	padding: 0
+	border: 0
+	outline: 0
+	vertical-align: baseline
+
+body
+	background: #D77100 url('/images/layout/body.jpg') repeat-x
+	
+a
+	color: blue
+	text-decoration: none
+	outline:none
+	&:hover
+		text-decoration: underline
+
+.page
+	margin: 0 auto
+	width: 1000px
+	
+.inline
+	li
+		list-style: none
+		display: inline
+
+.field, .actions, .notice, .alert, .error
+	margin: 10px 0
+
+.notice, .alert, .error
+	padding: 10px
+	
+.notice
+	background: #C0E080
+	color: #405C08
+		
+.alert
+	background: #E7D883
+	color: #625508
+	
+
+#header
+	background: url('/images/layout/bgcontent.jpg') no-repeat
+	height: 160px
+	position: relative
+	
+	#logo
+		position: absolute
+		top: 35px
+		left: 15px
+	
+	#nav_user
+		text-align: right
+		padding: 10px 0
+		margin-right: 10px
+			
+		a
+			background: #FF9F04
+			color: white
+			padding: 10px 15px
+			&:hover
+				background: #BF8932
+				text-decoration: underline
+				
+				
+	#menu
+		background: url('/images/layout/menu.jpg') repeat-y
+		position: absolute
+		bottom: 0px
+		height: 32px
+		width: 100%
+		
+		ul
+			height: 32px
+			padding-top: 7px
+			margin: 0 20px
+		
+		a
+			color: white
+			font-family: 'verdana', 'arial'
+			font-size: 0.9em
+			padding: 7px 15px
+			&:hover
+				text-decoration: underline
+				
+		a.active
+			color: orange
+		
+	.active
+		background: #f0f0f0
+		color: orange 
+					
+#content
+	background: #e8e8e8
+	
+#main, #footer
+	padding: 25px 20px 20px 20px
+	width: 960px
+	
+#main
+	background: white url('/images/layout/bgmain.jpg') repeat-x
+	min-height: 330px
+	
+	#img_sharding
+		text-align: center
+		margin: 30px 0 10px 0
+
+	p
+		margin: 5px 0
+		
+	input[type='text'], input[type='password']
+		border: 1px solid #CCC
+		font-size: 14px
+		padding: 4px
+		width: 300px
+		
+#footer
+	border-bottom: 1px solid #E37700
+	padding: 20px 0
+	position: relative
+	a
+		color: white
+	#footlogo
+		position: absolute
+		right: 20px
+		top: 30px
