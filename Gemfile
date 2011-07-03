@@ -9,7 +9,7 @@ gem "haml", '>= 3.0.25'
 gem "warden", '1.0.3'
 gem "devise", '1.1.5'
 gem "mysql", '2.8.1'
-gem 'ar-octopus', :require => "octopus"
+gem 'ar-octopus', :require => "octopus", :git => "git://github.com/tchandy/octopus.git"
 
 # Use unicorn as the web server
 # gem 'unicorn'

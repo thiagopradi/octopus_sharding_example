@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/tchandy/octopus.git
+  revision: a744931a3f22a6a59377de4b9e41e59d992779fb
+  specs:
+    ar-octopus (0.3.4)
+      activerecord (>= 2.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -28,8 +35,6 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
-    ar-octopus (0.3.4)
-      activerecord (>= 2.3)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
@@ -135,7 +140,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ar-octopus
+  ar-octopus!
   capybara
   cucumber
   cucumber-rails
